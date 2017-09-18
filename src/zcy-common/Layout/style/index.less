@@ -1,0 +1,97 @@
+@import "../../../styles/themes/default";
+@import "../../../styles/mixins/index";
+
+@layout-body-background      : #edeff5;
+@layout-header-background    : #404040;
+@layout-sider-background     : #2f323a;
+@layout-header-height        : 60px;
+@layout-header-padding       : 0 50px;
+@layout-footer-padding       : 24px 50px;
+@layout-trigger-height       : 48px;
+@layout-zero-trigger-width   : 36px;
+@layout-zero-trigger-height  : 42px;
+
+
+@layout-prefix-cls: ant-layout;
+
+.@{layout-prefix-cls} {
+  height: 100%;
+  overflow: auto;
+  background: @layout-body-background;
+
+  &-header {
+    background: @layout-header-background;
+    padding: @layout-header-padding;
+    height: @layout-header-height;
+    line-height: @layout-header-height;
+  }
+
+  &-footer {
+    padding: @layout-footer-padding;
+    color: @text-color;
+    font-size: @font-size-base;
+  }
+
+  &-content {
+    overflow: auto;
+  }
+
+  &-sider {
+    height: 100%;
+    float: left;
+    transition: all .3s @ease-out;
+    position: relative;
+    background: @layout-sider-background;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    &-has-trigger {
+      padding-bottom: @layout-trigger-height;
+    }
+
+    &-right {
+      order: 1;
+    }
+
+    &-trigger {
+      text-align: right;
+      padding: 0 12px;
+      height: 32px;
+      width: 100%;
+      cursor: pointer;
+      // background: tint(@heading-color, 20%);
+      color: #fff;
+      .anticon {
+        line-height: 32px;
+        font-size: 18px;
+      }
+    }
+
+    &-zero-width {
+      & > * {
+        overflow: hidden;
+      }
+
+      &-trigger {
+        position: absolute;
+        top: @layout-header-height;
+        right: -@layout-zero-trigger-width;
+        text-align: center;
+        width: @layout-zero-trigger-width;
+        height: @layout-zero-trigger-height;
+        line-height: @layout-zero-trigger-height;
+        background: @layout-sider-background;
+        color: #fff;
+        font-size: @layout-zero-trigger-width / 2;
+        border-radius: 0 @border-radius-base @border-radius-base 0;
+        cursor: pointer;
+        transition: background .3s ease;
+
+        &:hover {
+          background: tint(@layout-sider-background, 10%);
+        }
+      }
+    }
+  }
+}

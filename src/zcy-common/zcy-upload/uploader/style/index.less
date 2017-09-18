@@ -1,0 +1,52 @@
+.ant-upload-list-picture {
+
+  &-operation{
+    position: absolute;
+    top: 22px;
+    right: 8px;
+    font-size: 14px;
+    color: #999;
+
+    & .anticon-download, & .anticon-eye-o{
+      transition: all 0.3s ease;
+      opacity: 0;
+      cursor: pointer;
+     
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+
+  .ant-upload-list-item-info .ant-upload-list-item-name {
+    padding-right: 68px;
+  }
+}
+
+.ant-upload-list-item{
+
+  &:hover .anticon-download, &:hover .anticon-eye-o{
+    opacity: 1;
+  }
+}
+
+.ant-upload-list-item-info{
+
+  .anticon-download {
+    transition: all 0.3s ease;
+    opacity: 0;
+    cursor: pointer;
+    float: right;
+    color: #999;
+    line-height: 22px;
+
+    &:hover {
+      color: #666;
+    }
+  }
+}
+
+.ant-upload-list-picture-card .ant-upload-list-item .ant-upload-list-item-info .anticon-download {
+  left: 50%;
+  margin-left: 6px;
+}

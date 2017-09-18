@@ -1,0 +1,85 @@
+@import '../styles/themes/zcydefault.less';
+
+@step-tab-prefix-cls: zcy-step-tab;
+@step-tab-border-color: #d1d7e8;
+@step-tab-item-active-text-color: #fff;
+@step-tab-status-completed-icon-color: #4dbc00;
+@step-tab-status-text-color: #9ca5bd;
+@step-tab-status-icon-color: #d1d7e9;
+
+
+.@{step-tab-prefix-cls} {
+  width: 100%;
+  padding: 20px;
+
+  &-item{
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 60px;
+    border: 1px solid @step-tab-border-color;
+    border-radius: @border-radius-base;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #f6f7fa;
+    }
+
+    & + &{
+      margin-left: -1px;
+    }
+
+    &.active{
+      background-color: @primary-color;
+      border: 0;
+      color:@step-tab-item-active-text-color;
+
+      .@{step-tab-prefix-cls}-item-status {
+        color: @step-tab-item-active-text-color;
+      }
+    }
+
+    &-label {
+      font-size: 16px;
+      line-height: 34px;
+
+      &.only-title {
+        line-height: 60px;
+      }
+    }
+
+    &-status {
+      color: @step-tab-status-text-color;
+      text-align: left;
+
+      &.completed {
+
+        .@{step-tab-prefix-cls}-item-status-icon-wrapper {
+          color: @step-tab-status-completed-icon-color;
+        }
+      }
+
+      &-icon-wrapper {
+        float: left;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        margin: -2px 3px 0 21px;
+        font-size: 16px;
+        color: @step-tab-status-icon-color;
+        
+
+        .anticon-check {
+          position: absolute;
+          top: 8px;
+          left: 2px;
+          font-size: 12px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  
+}

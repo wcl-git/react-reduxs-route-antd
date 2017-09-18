@@ -1,0 +1,40 @@
+
+// 兼容ie8，模拟实现border
+.ant-menu-inline {
+  .ant-menu-active-border {
+    width: 3px;
+    position: absolute;
+    background: #5093e1;
+    left: 0;
+    height: 0;
+    bottom: 0;
+  }
+  .ant-menu-submenu-selected {
+    .ant-menu-active-border {
+      height: 100%;
+      transition: height .5s ease;
+    }
+  }
+
+  .ant-menu-submenu-title {
+    font-size: 16px;
+    .zcyicon {
+      font-size: 16px;
+    }
+    .anticon {
+      font-size: 16px;
+    }
+  }
+
+  .ant-menu-item {
+    & > a {
+      margin-left: 24px;
+
+      &.zcy-primary-nav-link{
+        display: inline-block;
+        margin-left: 0;
+      }
+    }
+  }
+}
+

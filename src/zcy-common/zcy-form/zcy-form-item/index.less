@@ -1,0 +1,113 @@
+@import '../../styles/themes/zcydefault.less';
+
+@inputWidth: 220px;
+@inputNumWidth: 150px;
+
+.ant-form-item.zcy-form-item {
+  height: 51px;
+  border: 1px solid #e7e9ea;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  & .ant-form-item-label {
+    padding: 0 20px;
+    border-right: 1px solid #e7e9ea;
+    background-color: #f6f7fa;
+    text-align: left;
+    line-height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    label{
+      font-size: 14px;
+      color: @label-color;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  & + & {
+    border-top: 0;
+  }
+
+  & .ant-form-item-control {
+    padding: 0 20px;
+    font-size:14px;
+    color:#2b2c34;
+    line-height: 50px;
+
+    &.is-audit {
+
+      &:hover{
+        background-color: #fdf3f5;
+      }
+    }
+  }
+
+  &.zcy-form-item-mtext{
+    height: auto;
+    overflow: hidden;
+
+    & .ant-form-item-label {
+      height: auto;
+      padding: 14px 20px;
+      padding-bottom: 1000px;
+      margin-bottom: -986px;
+      line-height: 1.5em;
+      white-space: initial;
+      overflow: initial;
+      text-overflow: initial;
+    }
+
+    & .ant-form-item-control {
+      padding: 10px 20px;
+      padding-bottom: 1000px;
+      margin-bottom: -990px;
+      line-height: 1.5em;
+    }
+  }
+
+  &.zcy-form-item-mlabel{
+    
+    & .ant-form-item-label {
+      padding: 6px 20px;
+      line-height: 1.5em;    
+    }
+  }
+
+  .ant-input {
+    width: @inputWidth
+  }
+  .ant-input-number {
+    width: @inputNumWidth
+  }
+ .ant-cascader-picker{
+   .ant-input {
+     width: 320px;
+   }
+ }
+  .ant-radio-wrapper {
+    vertical-align: top;
+  }
+
+  .has-error{
+    .ant-form-explain{
+      display: inline;
+      padding-left: 20px;
+    }
+  }
+  .has-success.has-feedback:after, .has-warning.has-feedback:after, .has-error.has-feedback:after, .is-validating.has-feedback:after{
+    display: inline-block;
+    top:10px;
+    left: 210px;
+  }
+}
+
+.zcy-form-split{
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px;
+}

@@ -1,0 +1,78 @@
+@import '../styles/themes/zcydefault.less';
+
+@panel-prefix-cls: zcy-panel;
+
+.@{panel-prefix-cls} {
+  background: #fff;
+  padding: 20px;
+  padding-top: 0;
+  font-size: 14px;
+
+  &-header {
+    padding:10px 0;
+    border-bottom:1px solid #d1d7e8;
+
+    &-title {
+      font-size: 18px;
+      color: #2f323a;
+      line-height: 30px;
+    }
+
+    &-btn-wrapper {
+      float: right;
+    }
+
+    &-btn-item {
+      vertical-align: middle;
+      
+      & + &{
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &-body {
+    padding-top: 20px;
+  }
+
+  &-sub-header {
+    padding:10px 0;
+
+    &-title {
+      font-size:16px;
+      color:#666666;
+      line-height: 30px;
+
+      &-group-order {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        background-color: @primary-color;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        line-height: 18px;
+      }
+    }
+
+    &-tip {
+      margin-left: 15px;
+      font-size:14px;
+      color:#9ca5bd;
+    }
+
+    &-btn-wrapper {
+      float: right;
+    }
+
+    &-btn-item {
+      vertical-align: middle;
+      
+      & + &{
+        margin-left: 10px;
+      }
+    }
+  }
+}

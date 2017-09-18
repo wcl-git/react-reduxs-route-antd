@@ -1,0 +1,117 @@
+.printContent {
+  font-size: 12px;
+  .text-table {
+    max-width: 65px;
+    min-width: 65px;
+    font-size: 22px;
+  }
+  .min-textTable {
+    max-width: 40px;
+    min-width: 40px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .print-box {
+    min-height: 1550px;
+    width: 1024px;
+    padding: 200px 50px;
+    position: relative;
+    .cover-line {
+      text-align: center;
+      font-size: 30px;
+      font-family: "宋体";
+      line-height: 50px;
+      .word {
+        display: inline-block;
+        width: 350px;
+        padding-bottom: 10px;
+        height: 50px;
+        border-bottom: 1px solid #666;
+        text-align: left;
+      }
+    }
+    .span-date {
+      width: 70px;
+      display: inline-block;
+    }
+    .table {
+      width: 100%;
+      background-color: #eee;
+      font-family: "宋体";
+      font-size: 22px;
+      border: 1px solid #666;
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      line-height: 18px;
+      thead > tr > th {
+        border: 1px solid #666;
+        line-height: 20px;
+        font-size: 22px;
+      }
+      tbody > tr {
+        background-color: #eee;
+        td {
+          border: 1px solid #666;
+          line-height: 20px;
+        }
+        .noborder-bottom {
+          border-bottom: 0;
+        }
+      }
+      td,
+      th {
+        border: 1px solid #ccd0d6;
+        border-width: 0 0 1px;
+        border-collapse: collapse;
+        font-size: inherit;
+        margin: 0;
+        text-align: center;
+        overflow: visible;
+        font-weight: 400;
+        vertical-align: middle;
+        height: 40px;
+      }
+      & + & {
+        border-top: 0;
+      }
+    }
+  }
+
+  .footer-num {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+  }
+
+  .instruction-title {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "宋体";
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .instruction {
+    font-size: 32px;
+    font-family: "宋体";
+    line-height: 40px;
+    font-weight: bold;
+  }
+  .red {
+    color: #ff2200;
+  }
+  .div-box {
+    min-height: 800px;
+    width: 100%;
+    border: 1px solid #666;
+    padding: 20px;
+    font-size: 22px;
+  }
+  .span-content {
+    text-align: left;
+    display: inline-block;
+    font-size: 22px;
+    font-family: "宋体";
+  }
+}

@@ -1,0 +1,48 @@
+@import '../styles/themes/zcydefault.less';
+
+@tab-prefix-cls: zcy-tab;
+@tab-bg-color: #ebf3fd;
+
+
+.@{tab-prefix-cls} {
+
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+    border-bottom: 0;
+    background-color: @tab-bg-color;
+
+    & .ant-tabs-nav-container {
+      height: 40px;
+    }
+
+    & .ant-tabs-tab {
+      margin-right: 0;
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      line-height: 24px;
+      color: #9ca5bd;
+    }
+
+    & .ant-tabs-tab-active {
+      background: #fff;
+      color: @primary-color;
+    }
+  }
+
+  & .ant-tabs-ink-bar {
+    top: 0;
+  }
+
+  & .ant-tabs-nav-container {
+    margin-bottom: 0;
+  }
+
+  & .ant-tabs-nav-wrap {
+    margin-bottom: 0;
+  } 
+
+  & .ant-tabs-extra-content {
+    line-height: 40px;
+  }
+}

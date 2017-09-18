@@ -1,0 +1,24 @@
+.full-width {
+  width: 100%;
+}
+
+.zcy-oss-file {
+  cursor: pointer;
+  color: #0082E1;
+  &-icon {
+    // 设置大小，保持跟文字相同大小，防止宽度跳动
+    font-size: 1.2em;
+  }
+  &-text {
+    display: none;
+  }
+
+  &:hover {
+    .zcy-oss-file-icon {
+      display: none;
+    }
+    .zcy-oss-file-text {
+      display: inherit;
+    }
+  }
+}

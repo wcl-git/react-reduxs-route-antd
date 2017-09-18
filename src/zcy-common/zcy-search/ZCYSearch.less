@@ -1,0 +1,36 @@
+@import '../styles/themes/zcydefault';
+@search-prefixCls: zcy-input-search;
+
+.@{search-prefixCls} {
+
+  &-wrap {
+    position: relative;
+    width: 300px;
+
+    & .@{search-prefixCls} {
+      padding-right: 24px;
+      min-height: 100%;
+      z-index: 1;
+    }
+  }
+
+  &-icon {
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 14px;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  &-suffix-wrap {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    margin-top: -7px;
+    z-index: 2;
+    line-height: 0;
+    color: rgba(0,0,0,.65);
+  }
+}

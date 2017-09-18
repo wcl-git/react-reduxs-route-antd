@@ -1,0 +1,598 @@
+<div>
+  {{!-- !!!本文件不要格式化!!! --}}
+  <div class="printContent">
+    {{#with _PRINT_}}
+    <div class="print-box" style="text-align:center;">
+      <br><br><br><br><br><br><br><br>
+      <h2 style="font-size: 60px;font-family:'黑体';">政府采购代理机构登记备案表</h2>
+      <br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br>
+      <div class="cover-line">单&nbsp;&nbsp;位&nbsp;&nbsp;名&nbsp;&nbsp;称（盖章）：<span class="word">{{organic.fullName}}</span></div>
+      <div class="cover-line"><span style="margin-right:5px">&nbsp;&nbsp;单&nbsp;&nbsp;位&nbsp;&nbsp;地&nbsp;&nbsp;址 ：</span><span class="word">{{orgFullAddr}}{{organic.regAddress}}</span></div>
+      <div class="cover-line">法&nbsp;&nbsp;定&nbsp;&nbsp;代&nbsp;&nbsp;表&nbsp;&nbsp;人&nbsp;：<span class="word">{{employee.legal.0.name}}</span></div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="cover-line">登&nbsp;&nbsp;记&nbsp;&nbsp;日&nbsp;&nbsp;期：
+        <span class="span-date"></span>年
+        <span class="span-date"></span>月
+        <span class="span-date"></span>日 &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="footer-num"> -1- </div>
+    </div>
+    <div class="print-box">
+      <p class="instruction-title">
+        填&nbsp;&nbsp;表&nbsp;&nbsp;说&nbsp;&nbsp;明
+      </p>
+      <div class="instruction">
+        1.本表填写后计算机打印，不得涂改；一式2份，首页加盖公章，印章清晰。
+      </div>
+      <div class="instruction">
+        2.登记人要如实逐项填报有关情况，对登记信息的真实性负责，如有弄虚作假者按有关规定予以处理处罚。
+      </div>
+      <div class="instruction">
+        3.本表填列数据均用阿拉伯数字，除万元、％保留一位小数外，其余均为整数。
+      </div>
+      <div class="instruction">
+        4.专职人员名单按照同系列高、中、初级顺序填写。
+      </div>
+      <div class="instruction">
+        5.表五至表八栏目不足者可另附页。
+      </div>
+      <div class="instruction">
+        6.登记人要确保网上登记信息及时更新。出现单位名称、法定代表人变更的，需向负责登记信息审核的财政部门报送纸质备案表。
+      </div>
+      <div class="footer-num"> -2- </div>
+    </div>
+    <div class="print-box">
+      <p class="instruction-title">表一、政府采购业务代理机构基本情况表</p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td style="width:140px;">机构全称</td>
+            <td colspan="4">{{organic.fullName}}</td>
+            <td style="width:180px;">组织机构代码</td>
+            <td style="width:180px;">{{organic.orgCode}}</td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom">经济性质</td>
+            <td class="noborder-bottom" colspan="4">
+              {{#with organic}}
+                {{#ifCond economicType '==' '1'}} 内资 {{/ifCond}}
+                {{#ifCond economicType '==' '11'}} 国有全资 {{/ifCond}}
+                {{#ifCond economicType '==' '12'}} 集体全资 {{/ifCond}}
+                {{#ifCond economicType '==' '13'}} 股份合作 {{/ifCond}}
+                {{#ifCond economicType '==' '14'}} 联营 {{/ifCond}}
+                {{#ifCond economicType '==' '141'}} 国有联营 {{/ifCond}}
+                {{#ifCond economicType '==' '142'}} 集体联营 {{/ifCond}}
+                {{#ifCond economicType '==' '143'}} 国有与集体联营 {{/ifCond}}
+                {{#ifCond economicType '==' '149'}} 其他联营 {{/ifCond}}
+                {{#ifCond economicType '==' '150'}} 有限责任 （公司） {{/ifCond}}
+                {{#ifCond economicType '==' '159'}} 其他有限责任 （公司） {{/ifCond}}
+                {{#ifCond economicType '==' '16'}} 股份有限 （公司） {{/ifCond}}
+                {{#ifCond economicType '==' '17'}} 私有 {{/ifCond}}
+                {{#ifCond economicType '==' '171'}} 私有独资 {{/ifCond}}
+                {{#ifCond economicType '==' '172'}} 私有合伙 {{/ifCond}}
+                {{#ifCond economicType '==' '173'}} 私营有限责任 （公司） {{/ifCond}}
+                {{#ifCond economicType '==' '174'}} 私营股份有限 （公司） {{/ifCond}}
+                {{#ifCond economicType '==' '175'}} 个体经营 {{/ifCond}}
+                {{#ifCond economicType '==' '179'}} 其他私有 {{/ifCond}}
+                {{#ifCond economicType '==' '19'}} 其他内资 {{/ifCond}}
+                {{#ifCond economicType '==' '2'}} 港、澳、台投资 {{/ifCond}}
+                {{#ifCond economicType '==' '21'}} 内地和港、澳、台合资 {{/ifCond}}
+                {{#ifCond economicType '==' '22'}} 内地和港、澳、台合作 {{/ifCond}}
+                {{#ifCond economicType '==' '23'}} 港、澳、台独资 {{/ifCond}}
+                {{#ifCond economicType '==' '24'}} 港、澳、台投资股份有限（公司）{{/ifCond}}
+                {{#ifCond economicType '==' '29'}} 其他港澳台投资 {{/ifCond}}
+                {{#ifCond economicType '==' '3'}} 国外投资 {{/ifCond}}
+                {{#ifCond economicType '==' '31'}} 中外合资 {{/ifCond}}
+                {{#ifCond economicType '==' '32'}} 中外合作 {{/ifCond}}
+                {{#ifCond economicType '==' '33'}} 外资 {{/ifCond}}
+                {{#ifCond economicType '==' '34'}} 国外投资股份有限（公司） {{/ifCond}}
+                {{#ifCond economicType '==' '39'}} 其他国外投资 {{/ifCond}}
+                {{#ifCond economicType '==' '9'}} 其他 {{/ifCond}}
+              {{/with}}
+            </td>
+            <td class="noborder-bottom">上级主管部门</td>
+            <td class="noborder-bottom"></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td rowspan="2" style="width:140px;" class="noborder-bottom">业务联系人</td>
+            <td rowspan="2" class="noborder-bottom">{{organic.contactTwoName}}</td>
+            <td style="width:110px;">联系电话</td>
+            <td width="200px">{{organic.outContactPhone}}</td>
+            <td style="width:110px;">手机</td>
+            <td style="width:250px;">{{organic.contactTwoPhone}}</td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom">传真电话</td>
+            <td class="noborder-bottom">{{organic.faxNumber}}</td>
+            <td style="width:110px;" class="noborder-bottom">电子邮箱</td>
+            <td class="noborder-bottom">{{organic.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="noborder-bottom" rowspan="2" width="140px">营业地址</td>
+            <td colspan="3">
+              {{organic.bizDistrictFullName}}
+            </td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom">{{organic.bizAddress}}</td>
+            <td class="noborder-bottom" width="110px">邮政编号</td>
+            <td class="noborder-bottom" width='100px'>{{organic.postCode}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          {{#with aptitudeBiz}}
+          <tr>
+            <td class="noborder-bottom" width="20px" rowspan="4">营业执照</td>
+            <td width="110px">注册号码</td>
+            <td width="100px">{{bizLicenseCode}}</td>
+            <td width="110px">注册地址</td>
+            <td colspan="3">{{../orgFullAddr}}{{../regAddress}}</td>
+          </tr>
+          <tr>
+            <td> 注册资金</td>
+            <td>{{bizRegistCapital}}万元</td>
+            <td>发证机关</td>
+            <td>{{bizAwardOrg}}</td>
+            <td width="110px">发证日期</td>
+            <td>{{formatDate bizAwarDate "yyyy-MM-dd"}}</td>
+          </tr>
+          <tr>
+            <td>营业范围（主营）</td>
+            <td colspan="5">{{bizMainRange}}</td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom">营业范围（兼营）</td>
+            <td class="noborder-bottom" colspan="5">
+              {{bizConcurrentRange}}
+            </td>
+          </tr>
+          {{/with}}
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td width="180px">开户银行及账号</td>
+            <td colspan="3">{{#with organic.financeExtend}}{{depositBank}} {{bankAccount}}{{/with}}</td>
+          </tr>
+          <tr>
+            <td>税务登记机关</td>
+            <td colspan="3">{{taxAwardOrg}}</td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom" rowspan="2">从业人员总数</td>
+            <td width="110px" rowspan="2" class="noborder-bottom">{{proTotalCount}}人</td>
+            <td>中级职称人员数</td>
+            <td>占从业人员总数比例</td>
+          </tr>
+          <tr>
+            <td class="noborder-bottom">{{middleCount}}人</td>
+            <td class="noborder-bottom">{{personalRatios}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        {{#with ageOrgFinance}}
+        <tr>
+          <td>资金情况</td>
+          <td>资金总额</td>
+          <td>{{totalAssets}}万元</td>
+          <td>所有者权益</td>
+          <td>{{ownershipinterest}}万元</td>
+          <td>负债总额</td>
+          <td>{{totalLiabilitie}}万元</td>
+        </tr>
+        {{/with}}
+        <tr>
+          <td colspan="2">是否依法缴纳税收</td>
+          <td colspan="5">
+            {{#equals organic.isTaxation 1}}是{{/equals}}
+            {{#equals organic.isTaxation 0}}否{{/equals}}
+          </td>
+        </tr>
+        <tr>
+          <td class="noborder-bottom" colspan="2">是否依法缴纳保障基金</td>
+          <td class="noborder-bottom" colspan="5">
+            {{#equals organic.isPaySecurity 1}}是{{/equals}}
+            {{#equals organic.isPaySecurity 0}}否{{/equals}}
+          </td>
+        </tr>
+        <tr>
+          <td class="noborder-bottom" colspan="2">近三年内有无重大违法记录</td>
+          <td class="noborder-bottom" colspan="5">
+            {{#equals organic.isInfraction 1}}有{{/equals}}
+            {{#equals organic.isInfraction 0}}无{{/equals}}
+          </td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td>资质证明</td>
+          <td>批准时间</td>
+          <td>审批机关</td>
+          <td>等级</td>
+          <td>是否年检</td>
+        </tr>
+        {{#each ageQualifications}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{formatDate approvalTime "yyyy-MM-dd"}}</td>
+          <td>{{agencyName}}</td>
+          <td>{{level}}</td>
+          <td>
+            {{#equals isRenewal "Y"}}是{{/equals}} {{#equals isRenewal "N"}}否{{/equals}}
+          </td>
+        </tr>
+        {{/each}}
+      </table>
+      <div style="margin-top: 10px;font-size: 14pt;font-family: '宋体';">说明：</div>
+      <div style="margin-left: 30px;font-size: 14pt;font-family: '宋体';">1、人员总数应为专职人员人数。</div>
+      <div class="footer-num"> - 3 - </div>
+    </div>
+    {{#with employee}}
+    <div class="print-box">
+      <p class="instruction-title">表二、主要负责人员情况（法定代表人）</p>
+      <table class="table">
+        <tr>
+          <td width="100px">姓名</td>
+          <td>{{legal.0.name}}</td>
+          <td width="100px">性别</td>
+          <td>
+            {{#equals legal.0.gender 0}}男{{/equals}} {{#equals legal.0.gender 1}}女{{/equals}}
+          </td>
+          <td width="110px">出生年月</td>
+          <td>{{formatDate legal.0.birthDate "yyyy-MM-dd"}}</td>
+          {{#with legal.0.filemanageMaps}}
+          <td class="noborder-bottom" width="100px" rowspan="5">
+            {{#each AGE_ORG_EMPLOYEE_PHOTO}}
+            <img src="{{downloadUrl}}" alt="" width="100px"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr>
+          <td>职务</td>
+          <td colspan="2">{{legal.0.position}}</td>
+          <td colspan="2">文化程度</td>
+          <td>
+            {{#equals legal.0.educateLevel 61}}高中毕业{{/equals}}
+            {{#equals legal.0.educateLevel 31}}专科毕业{{/equals}}
+            {{#equals legal.0.educateLevel 20}}大学本科{{/equals}}
+            {{#equals legal.0.educateLevel 14}}硕士{{/equals}}
+            {{#equals legal.0.educateLevel 13}}博士{{/equals}}
+            {{#equals legal.0.educateLevel 12}}博士后{{/equals}}
+            {{#equals legal.0.educateLevel 28}}相当大学毕业{{/equals}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">身份证号码</td>
+          <td colspan="3">{{legal.0.cardId}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">职称或职业注册资格</td>
+          <td colspan="3">{{legal.0.proTitle}}</td>
+        </tr>
+        <tr>
+          <td class="noborder-bottom" colspan="3">何时何校何专业毕业</td>
+          <td class="noborder-bottom" colspan="3">{{formatDate legal.0.graduationDate "yyyy-MM-dd"}}{{legal.0.graduateInfo}}{{legal.0.profession}}</td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td>联系电话</td>
+          <td>{{legal.0.telephone}}</td>
+          <td width="90px">传真</td>
+          <td>{{legal.0.fax}}</td>
+          <td width="100px">手机</td>
+          <td>{{legal.0.phone}}</td>
+        </tr>
+        <tr>
+          <td width="120px" rowspan="8">身份证复印件</td>
+          {{#with legal.0.filemanageMaps}}
+          <td colspan="5" rowspan="8">
+            {{#each AGE_EMPLOYEE_CARDID}}
+            <img src="{{downloadUrl}}" alt="" style="width:60%;margin-left:20px;"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="6">本人签名:</td>
+        </tr>
+      </table>
+      <div class="footer-num"> - 4 - </div>
+    </div>
+    {{/with}} 
+    {{#with employee}}
+    <div class="print-box">
+      <p class="instruction-title">表三、主要负责人员情况（技术负责人）</p>
+      <table class="table">
+        <tr>
+          <td width="100px">姓名</td>
+          <td>{{technology.0.name}}</td>
+          <td width="100px">性别</td>
+          <td>
+            {{#equals technology.0.gender 0}}男{{/equals}} {{#equals technology.0.gender 1}}女{{/equals}}
+          </td>
+          <td width="110px">出生年月</td>
+          <td>{{formatDate technology.0.birthDate "yyyy-MM-dd"}}</td>
+          {{#with technology.0.filemanageMaps}}
+          <td class="noborder-bottom" width="100px" rowspan="5">
+            {{#each technology.0.AGE_ORG_EMPLOYEE_PHOTO}}
+            <img src="{{downloadUrl}}" alt="" width="100px"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr>
+          <td>职务</td>
+          <td colspan="2">{{technology.0.position}}</td>
+          <td colspan="2">文化程度</td>
+          <td>
+            {{#equals technology.0.educateLevel 61}}高中毕业{{/equals}}
+            {{#equals technology.0.educateLevel 31}}专科毕业{{/equals}}
+            {{#equals technology.0.educateLevel 20}}大学本科{{/equals}}
+            {{#equals technology.0.educateLevel 14}}硕士{{/equals}}
+            {{#equals technology.0.educateLevel 13}}博士{{/equals}}
+            {{#equals technology.0.educateLevel 12}}博士后{{/equals}}
+            {{#equals technology.0.educateLevel 28}}相当大学毕业{{/equals}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">身份证号码</td>
+          <td colspan="3">{{technology.0.cardId}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">职称或职业注册资格</td>
+          <td colspan="3">{{technology.0.proTitle}}</td>
+        </tr>
+        <tr>
+          <td class="noborder-bottom" colspan="3">何时何校何专业毕业</td>
+          <td class="noborder-bottom" colspan="3">{{formatDate technology.0.graduationDate "yyyy-MM-dd"}}{{technology.0.graduateInfo}}{{technology.0.profession}}</td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td>联系电话</td>
+          <td>{{technology.0.telephone}}</td>
+          <td width="90px">传真</td>
+          <td>{{technology.0.fax}}</td>
+          <td width="100px">手机</td>
+          <td>{{technology.0.phone}}</td>
+        </tr>
+        <tr>
+          <td width="120px" rowspan="8">身份证复印件</td>
+          {{#with technology.0.filemanageMaps}}
+          <td colspan="5" rowspan="8">
+            {{#each AGE_EMPLOYEE_CARDID}}
+            <img src="{{downloadUrl}}" alt="" style="width:60%;margin-left:20px;"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="6">本人签名:</td>
+        </tr>
+      </table>
+      <div class="footer-num"> - 5 - </div>
+    </div>
+    {{/with}} 
+    {{#with employee}}
+    <div class="print-box">
+      <p class="instruction-title">表四、主要负责人员情况（财务负责人）</p>
+      <table class="table">
+        <tr>
+          <td width="100px">姓名</td>
+          <td>{{finance.0.name}}</td>
+          <td width="100px">性别</td>
+          <td>
+            {{#equals finance.0.gender "0"}}男{{/equals}} {{#equals finance.0.gender "1"}}女{{/equals}}
+          </td>
+          <td width="110px">出生年月</td>
+          <td>{{formatDate finance.0.birthDate "yyyy-MM-dd"}}</td>
+          {{#with finance.0.filemanageMaps}}
+          <td class="noborder-bottom" width="100px" rowspan="5">
+            {{#each AGE_ORG_EMPLOYEE_PHOTO}}
+            <img src="{{downloadUrl}}" alt="" width="100px;"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr>
+          <td>职务</td>
+          <td colspan="2">{{finance.0.position}}</td>
+          <td colspan="2">文化程度</td>
+          <td>
+            {{#equals finance.0.educateLevel 61}}高中毕业{{/equals}}
+            {{#equals finance.0.educateLevel 31}}专科毕业{{/equals}}
+            {{#equals finance.0.educateLevel 20}}大学本科{{/equals}}
+            {{#equals finance.0.educateLevel 14}}硕士{{/equals}}
+            {{#equals finance.0.educateLevel 13}}博士{{/equals}}
+            {{#equals finance.0.educateLevel 12}}博士后{{/equals}}
+            {{#equals finance.0.educateLevel 28}}相当大学毕业{{/equals}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">身份证号码</td>
+          <td colspan="3">{{finance.0.cardId}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">职称或职业注册资格</td>
+          <td colspan="3">{{finance.0.proTitle}}</td>
+        </tr>
+        <tr>
+          <td class="noborder-bottom" colspan="3">何时何校何专业毕业</td>
+          <td class="noborder-bottom" colspan="3">{{formatDate finance.0.graduationDate "yyyy-MM-dd"}}{{finance.0.graduateInfo}}{{finance.0.profession}}</td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td>联系电话</td>
+          <td>{{finance.0.telephone}}</td>
+          <td width="90px">传真</td>
+          <td>{{finance.0.fax}}</td>
+          <td width="100px">手机</td>
+          <td>{{finance.0.phone}}</td>
+        </tr>
+        <tr>
+          <td width="120px" rowspan="8">身份证复印件</td>
+          {{#with finance.0.filemanageMaps}}
+          <td colspan="5" rowspan="8">
+            {{#each AGE_EMPLOYEE_CARDID}}
+            <img src="{{downloadUrl}}" alt="" style="width:60%;margin-left:20px;"> {{/each}}
+          </td>
+          {{/with}}
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="6">本人签名:</td>
+        </tr>
+      </table>
+      <div class="footer-num"> - 6 - </div>
+    </div>
+    {{/with}}
+    <div class="print-box" style="margin-left: 0;">
+      <p class="instruction-title">表五、专职人员名单</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="min-textTable">序号</th>
+            <th class="min-textTable">姓名</th>
+            <th style="text-align: center;">身份证号码</th>
+            <th class="text-table">最高学历</th>
+            <th class="min-textTable">专业</th>
+            <th class="min-textTable">职称</th>
+            <th class="text-table">职称证书编号</th>
+            <th class="text-table">执业注册资格证书名称</th>
+            <th class="text-table">执业注册资格证书编号</th>
+            <th class="text-table">是否去的政府采购业务培训证书</th>
+            <th class="text-table">政府采购业务培训证书编号</th>
+            <th class="text-table">是否缴纳社会保障金</th>
+            <th class="min-textTable">是否外聘</th>
+            <th class="min-textTable">是否兼职</th>
+          </tr>
+        </thead>
+        {{#each ageProfessionals}}
+        <tr>
+          <td class="min-textTable">{{ add @index 1}}</td>
+          <td class="min-textTable">{{name}}</td>
+          <td>{{cardId}}</td>
+          <td class="text-table">
+            {{#equals education 61}}高中毕业{{/equals}}
+            {{#equals education 31}}专科毕业{{/equals}}
+            {{#equals education 20}}大学本科{{/equals}}
+            {{#equals education 14}}硕士{{/equals}}
+            {{#equals education 13}}博士{{/equals}}
+            {{#equals education 12}}博士后{{/equals}}
+            {{#equals education 28}}相当大学毕业{{/equals}}
+          </td>
+          <td class="min-textTable">{{profession}}</td>
+          <td class="min-textTable">{{professionTitle}}</td>
+          <td class="text-table">{{proCertificateCode}}</td>
+          <td class="text-table">{{jobCertificateName}}</td>
+          <td class="text-table">{{jobCertificateCode}}</td>
+          <td class="text-table">
+            {{#equals isOrgTrain "Y"}}是{{/equals}} {{#equals isOrgTrain "N"}}否{{/equals}}
+          </td>
+          <td class="text-table">{{orgTrainCode}}</td>
+          <td class="text-table">
+            {{#equals isSecurity "Y"}}是{{/equals}} {{#equals isSecurity "N"}}否{{/equals}}
+          </td>
+          <td class="min-textTable">
+            {{#equals isExternalStaff "Y"}}是{{/equals}} {{#equals isExternalStaff "N"}}否{{/equals}}
+          </td>
+          <td class="min-textTable">
+            {{#equals isTempJob "Y"}}是{{/equals}} {{#equals isTempJob "N"}}否{{/equals}}
+          </td>
+        </tr>
+        {{/each}}
+      </table>
+      <div class="footer-num"> - 7 - </div>
+    </div>
+    <div class="print-box">
+      <p class="instruction-title">表六、政府采购业务代理机构营业执照、 开评标场所及设施
+      </p>
+      <div class="div-box">
+        {{#with aptitudeBiz.filemanageVos}}
+        <div style="margin-bottom: 50px;">
+          <span style="font-size: 22px;font-family: '宋体';">营业执照扫描件:</span><br><br> {{#each AGE_BUSINESS_LICENSE_FILE}}
+          <div><img src="{{downloadUrl}}" alt="" style="width:80%;margin-left:20px;"></div>
+          {{/each}}
+        </div>
+        {{/with}}
+        <div>
+          <div style="font-size: 22px;font-family: '宋体';">评标场地:</div>
+          <br>
+          <table class="table">
+            <tr>
+              <td>编号</td>
+              <td>名称</td>
+              <td>类型</td>
+              <td>地址</td>
+              <td>面积</td>
+              <td>容量</td>
+              <td>是否开放</td>
+            </tr>
+            {{#each bidding}}
+            <tr>
+              <td>{{siteCode}}</td>
+              <td>{{siteName}}</td>
+              <td>{{siteTypeName}}</td>
+              <td>{{siteProv}} {{siteCity}} {{siteDist}} {{siteAddress}}</td>
+              <td>{{siteProportion}}</td>
+              <td>{{maxCapacity}}</td>
+              <td>
+                {{#equals isOpen 1}}是{{/equals}}
+                {{#equals isOpen 0}}否{{/equals}}
+              </td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+      </div>
+      <div class="footer-num"> - 8 - </div>
+    </div>
+    <div class="print-box">
+      <p class="instruction-title">表七、政府采购业务代理机构内部机构设置情况</p>
+      {{#with filemanageVos}}
+      <div class="div-box">
+        {{#each AGE_ORG_INSIDEORGANIZATION_FILE}}
+        <img src="{{downloadUrl}}" alt="" style="width:80%;margin-left:20px;"> {{/each}}
+      </div>
+      {{/with}}
+      <div class="footer-num"> - 9 - </div>
+    </div>
+    <div class="print-box">
+      <p class="instruction-title">表八、政府采购业务代理机构简介</p>
+      <div class="div-box" style="font-size: 22px;font-family: '宋体';line-height:40px;">{{organic.remark}}</div>
+      <div class="footer-num"> - 10 - </div>
+    </div>
+    {{/with}}
+  </div>
+</div>
