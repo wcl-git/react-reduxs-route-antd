@@ -48,7 +48,6 @@
 - [x] [Babel](https://babeljs.io/)
 - [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [x] [PostCSS](https://github.com/postcss/postcss)
-- [ ] 还有哪些你认为有价值的优化点？随时联系@大海
 
 ## 安装(如果还需要的话)
 
